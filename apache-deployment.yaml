@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  apache-deployment-name
+  namespace: minikube-demo
+  labels:
+    app: apache-deployment-app
+spec:
+  selector:
+    matchLabels:
+      app: apache-deployment-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apache-deployment-pod
+    spec:
+      containers:
+      - name:  apache-deployment-container
+        image:  httpd
+        ports:
+        - containerPort:  80
+          name:  apache-port
+    

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  apache-service-name
+  namespace: minikube-demo
+  labels:
+    app:  apache-service-app
+spec:
+  selector:
+    app: apache-deployment-pod
+  type: ClusterIP
+  ports:
+  - name: apache-service-port
+    port:  8080
+    targetPort:  80
+    

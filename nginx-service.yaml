@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  nginx-service-name
+  namespace: minikube-demo
+  labels:
+    app:  nginx-service-app
+spec:
+  selector:
+    app: nginx-deployment-pod
+  type: ClusterIP
+  ports:
+  - name: nginx-service-port
+    port:  8080
+    targetPort:  80

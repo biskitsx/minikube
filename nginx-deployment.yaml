@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  nginx-deployment-name
+  namespace: minikube-demo
+  labels:
+    app:  nginx-deployment-app
+spec:
+  selector:
+    matchLabels:
+      app: nginx-deployment-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  nginx-deployment-pod
+    spec:
+      containers:
+      - name:  nginx-deployment-container
+        image:  nginx
+        ports:
+        - containerPort:  80
+          name:  nginx-port
