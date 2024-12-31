@@ -16,7 +16,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name:  ksuphaky/nginx:v0.1.1
+      - name:  ksuphaky/nginx:v.0.1.2
         image:  nginx
         ports:
         - containerPort:  80
